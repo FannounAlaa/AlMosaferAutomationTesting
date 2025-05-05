@@ -24,6 +24,7 @@ AlMosaferAutomationTesting
 
 ✅ Test Scenarios
 Test #	Description
+
 1	(Disabled) Language check (html[lang])
 
 2	Currency display validation (Expecting SAR)
@@ -64,8 +65,6 @@ Test #	Description
     Or run AppTest.java via your IDE (e.g., IntelliJ, Eclipse) with TestNG support.
 
 ⚠️ Notes
-
-    Test 1 (CheckLanguageTest) is disabled by default because it takes a parameter (ExpectedLanguage) and is better run from another test context (e.g., test suite or test 8).
 
     Tests rely on dynamic UI elements — the site structure might change, requiring selector updates.
 
