@@ -3,7 +3,7 @@
 This project contains a suite of automated UI tests for the AlMosafer website using Java, Selenium WebDriver, and TestNG. The tests validate core functionality such as language, currency, contact number, date pickers, and hotel search results across different locales.
 📂 Project Structure
 
-AlMosaferAutomationTesting/
+AlMosaferAutomationTesting
 ├── AppTest.java         # Main test class containing all TestNG test cases
 ├── TestData.java        # Shared data, configurations, and setup logic
 
