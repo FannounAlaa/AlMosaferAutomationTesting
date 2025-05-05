@@ -4,6 +4,8 @@ This project contains a suite of automated UI tests for the AlMosafer website us
 📂 Project Structure
 
 AlMosaferAutomationTesting
+
+
 ├── AppTest.java         # Main test class containing all TestNG test cases
 ├── TestData.java        # Shared data, configurations, and setup logic
 
