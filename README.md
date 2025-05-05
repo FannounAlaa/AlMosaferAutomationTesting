@@ -25,15 +25,25 @@ AlMosaferAutomationTesting
 ✅ Test Scenarios
 Test #	Description
 1	(Disabled) Language check (html[lang])
+
 2	Currency display validation (Expecting SAR)
+
 3	Contact number validation (+966554400000)
+
 4	Check for Qitaf logo presence in footer
+
 5	Ensure the Hotel tab is not selected by default
+
 6	Validate flight departure date is set to tomorrow
+
 7	Validate return date is set to day after tomorrow
+
 8	Randomly load Arabic/English version and validate language
+
 9	Random hotel city selection (based on locale) and visitor config
+
 10	Validate search results are retrieved
+
 🚀 How to Run the Tests
 
     Install Dependencies
