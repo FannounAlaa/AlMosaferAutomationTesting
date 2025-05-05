@@ -1,12 +1,18 @@
 package AlMosaferAutomationTesting.AlMosaferAutomationTesting;
 
+import static org.testng.Assert.assertEquals;
+
 import java.time.Duration;
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Random;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
@@ -29,10 +35,9 @@ public class AppTest {
 		PopupButton.click();
 	}
 
-	@Test(priority = 1)
-	public void CheckLanguageTest() {
+	@Test(priority = 1, enabled = false)
+	public void CheckLanguageTest(String ExpectedLanguage) {
 		String ActualLanguage = driver.findElement(By.tagName("html")).getDomAttribute("lang");
-		String ExpectedLanguage = "en";
 
 		Assert.assertEquals(ActualLanguage, ExpectedLanguage);
 	}
@@ -52,6 +57,7 @@ public class AppTest {
 		Assert.assertEquals(ActualNumber, ExpectedNumber);
 
 	}
+
 	@Test(priority = 4)
 	public void CheckQitafLogo() {
 		WebElement TheFooter = driver.findElement(By.tagName("footer"));
@@ -61,11 +67,112 @@ public class AppTest {
 
 		Assert.assertEquals(ActualImageIsDisplay, true);
 	}
-	
-	@AfterTest
-	public void DoWork() {
+
+	@Test(priority = 5)
+	public void CheckHotelTabIsNotSelected() {
+		WebElement HotelTab = driver.findElement(By.id("uncontrolled-tab-example-tab-hotels"));
+		String ActualTab = HotelTab.getDomAttribute("aria-selected");
+
+		String expectedCheckHotelTabIsNotSelected = "false";
+
+		Assert.assertEquals(ActualTab, expectedCheckHotelTabIsNotSelected);
+	}
+
+	@Test(priority = 6)
+	public void CheckFlightDepartureDate() {
+
+		List<WebElement> dates = driver.findElements(By.cssSelector(".sc-dXfzlN.iPVuSG"));
+		String ActualDate = dates.get(0).getText();
+
+		LocalDate date = LocalDate.now();
+		int tomorrow = date.plusDays(1).getDayOfMonth();
+		String tomorrowAsFormatedValue = String.format("%02d", tomorrow);
+
+		Assert.assertEquals(ActualDate, tomorrowAsFormatedValue);
+
+	}
+
+	@Test(priority = 7)
+	public void CheckFlightReturnDate() {
+		List<WebElement> dates = driver.findElements(By.cssSelector(".sc-dXfzlN.iPVuSG"));
+		String ActualDate = dates.get(1).getText();
+
+		LocalDate date = LocalDate.now();
+
+		int DayAftertomorrow = date.plusDays(2).getDayOfMonth();
+		String DayAfterTomorrowAsFormatedValue = String.format("%02d", DayAftertomorrow);
+
+		Assert.assertEquals(ActualDate, DayAfterTomorrowAsFormatedValue);
+	}
+
+	@Test(priority = 8)
+	public void ChangeLanguageRandomly() {
+		Random rand = new Random();
+		String[] Websites = {"https://www.almosafer.com/en", "https://www.almosafer.com/ar"};
+		int RandomIndex = rand.nextInt(Websites.length);
 		
+		driver.get(Websites[RandomIndex]);
+		
+		if(driver.getCurrentUrl().contains("en")) {
+			CheckLanguageTest("en");
+		}
+		else {
+			CheckLanguageTest("ar");
+		}
+	}
+	@Test(priority = 9)
+	public void RandomlySelectCities() {
+		Random rand = new Random();
+		WebElement HotelTab = driver.findElement(By.id("uncontrolled-tab-example-tab-hotels"));
+		HotelTab.click();
+		
+		WebElement SearchInputField = driver.findElement(By.cssSelector(".sc-phbroq-2.uQFRS.AutoComplete__Input"));
+		String[] EnglishCtities = {"Dubai", "Jeddeh", "Riyadh"};
+		String[] ArabicCtities = {"جدة", "دبي"};
+		
+		int randEnglishCitities = rand.nextInt(EnglishCtities.length);
+		int randArabicCtities = rand.nextInt(ArabicCtities.length);
+		
+		if(driver.getCurrentUrl().contains("en")) {
+			SearchInputField.sendKeys(EnglishCtities[randEnglishCitities]);
+		}
+		else {
+			SearchInputField.sendKeys(ArabicCtities[randArabicCtities]);
+		}
+		
+		WebElement SelectVistorNumber = driver.findElement(By.cssSelector(".sc-tln3e3-1.gvrkTi"));
+		
+		String[] Values = {"A", "B"};
+		
+		int RandomValue = rand.nextInt(Values.length);
+
+		Select mySelector = new Select(SelectVistorNumber);
+
+		mySelector.selectByValue(Values[RandomValue]);
+
+		
+		driver.findElement(By.cssSelector(".sc-1vkdpp9-5.btwWVk")).click();;
 	}
 	
-	
+	@Test(priority = 10)
+	public void CheckTheResultsIsretrived() throws InterruptedException {
+		Thread.sleep(10000);
+
+		String Results = driver.findElement(By.xpath("//span[@data-testid='srp_properties_found']")).getText();
+
+		if (driver.getCurrentUrl().contains("en")) {
+			Assert.assertEquals(Results.contains("found"), true);
+
+		} else {
+			Assert.assertEquals(Results.contains("مكان إقامة"), true);
+
+		}
+
+	}
+
+	@AfterTest
+	public void DoWork() {
+
+	}
+
 }

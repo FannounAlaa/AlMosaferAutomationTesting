@@ -1,32 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="1" total="10" passed="9" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-05-01T12:50:39 EET" name="Default suite" finished-at="2025-05-01T12:50:41 EET" duration-ms="1813">
+  <suite started-at="2025-05-05T12:46:17 EET" name="Default suite" finished-at="2025-05-05T12:46:31 EET" duration-ms="14511">
     <groups>
     </groups>
-    <test started-at="2025-05-01T12:50:39 EET" name="Default test" finished-at="2025-05-01T12:50:41 EET" duration-ms="1813">
+    <test started-at="2025-05-05T12:46:17 EET" name="Default test" finished-at="2025-05-05T12:46:31 EET" duration-ms="14511">
       <class name="AlMosaferAutomationTesting.AlMosaferAutomationTesting.AppTest">
-        <test-method is-config="true" signature="Setup()[pri:0, instance:AlMosaferAutomationTesting.AlMosaferAutomationTesting.AppTest@6622fc65]" started-at="2025-05-01T12:50:39 EET" name="Setup" finished-at="2025-05-01T12:50:41 EET" duration-ms="1679" status="PASS">
+        <test-method is-config="true" signature="Setup()[pri:0, instance:AlMosaferAutomationTesting.AlMosaferAutomationTesting.AppTest@1d131e1b]" started-at="2025-05-05T12:46:17 EET" name="Setup" finished-at="2025-05-05T12:46:18 EET" duration-ms="1539" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Setup -->
-        <test-method signature="CheckLanguageTest()[pri:1, instance:AlMosaferAutomationTesting.AlMosaferAutomationTesting.AppTest@6622fc65]" started-at="2025-05-01T12:50:41 EET" name="CheckLanguageTest" finished-at="2025-05-01T12:50:41 EET" duration-ms="17" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CheckLanguageTest -->
-        <test-method signature="CheckCurrencyTest()[pri:2, instance:AlMosaferAutomationTesting.AlMosaferAutomationTesting.AppTest@6622fc65]" started-at="2025-05-01T12:50:41 EET" name="CheckCurrencyTest" finished-at="2025-05-01T12:50:41 EET" duration-ms="28" status="PASS">
+        <test-method signature="CheckCurrencyTest()[pri:2, instance:AlMosaferAutomationTesting.AlMosaferAutomationTesting.AppTest@1d131e1b]" started-at="2025-05-05T12:46:18 EET" name="CheckCurrencyTest" finished-at="2025-05-05T12:46:18 EET" duration-ms="21" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckCurrencyTest -->
-        <test-method signature="CheckContactNo()[pri:3, instance:AlMosaferAutomationTesting.AlMosaferAutomationTesting.AppTest@6622fc65]" started-at="2025-05-01T12:50:41 EET" name="CheckContactNo" finished-at="2025-05-01T12:50:41 EET" duration-ms="25" status="PASS">
+        <test-method signature="CheckContactNo()[pri:3, instance:AlMosaferAutomationTesting.AlMosaferAutomationTesting.AppTest@1d131e1b]" started-at="2025-05-05T12:46:18 EET" name="CheckContactNo" finished-at="2025-05-05T12:46:18 EET" duration-ms="16" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckContactNo -->
-        <test-method signature="CheckQitafLogo()[pri:4, instance:AlMosaferAutomationTesting.AlMosaferAutomationTesting.AppTest@6622fc65]" started-at="2025-05-01T12:50:41 EET" name="CheckQitafLogo" finished-at="2025-05-01T12:50:41 EET" duration-ms="39" status="PASS">
+        <test-method signature="CheckQitafLogo()[pri:4, instance:AlMosaferAutomationTesting.AlMosaferAutomationTesting.AppTest@1d131e1b]" started-at="2025-05-05T12:46:18 EET" name="CheckQitafLogo" finished-at="2025-05-05T12:46:18 EET" duration-ms="35" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckQitafLogo -->
+        <test-method signature="CheckHotelTabIsNotSelected()[pri:5, instance:AlMosaferAutomationTesting.AlMosaferAutomationTesting.AppTest@1d131e1b]" started-at="2025-05-05T12:46:18 EET" name="CheckHotelTabIsNotSelected" finished-at="2025-05-05T12:46:18 EET" duration-ms="11" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CheckHotelTabIsNotSelected -->
+        <test-method signature="CheckFlightDepartureDate()[pri:6, instance:AlMosaferAutomationTesting.AlMosaferAutomationTesting.AppTest@1d131e1b]" started-at="2025-05-05T12:46:18 EET" name="CheckFlightDepartureDate" finished-at="2025-05-05T12:46:18 EET" duration-ms="20" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CheckFlightDepartureDate -->
+        <test-method signature="CheckFlightReturnDate()[pri:7, instance:AlMosaferAutomationTesting.AlMosaferAutomationTesting.AppTest@1d131e1b]" started-at="2025-05-05T12:46:18 EET" name="CheckFlightReturnDate" finished-at="2025-05-05T12:46:18 EET" duration-ms="12" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CheckFlightReturnDate -->
+        <test-method signature="ChangeLanguageRandomly()[pri:8, instance:AlMosaferAutomationTesting.AlMosaferAutomationTesting.AppTest@1d131e1b]" started-at="2025-05-05T12:46:18 EET" name="ChangeLanguageRandomly" finished-at="2025-05-05T12:46:19 EET" duration-ms="395" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ChangeLanguageRandomly -->
+        <test-method signature="RandomlySelectCities()[pri:9, instance:AlMosaferAutomationTesting.AlMosaferAutomationTesting.AppTest@1d131e1b]" started-at="2025-05-05T12:46:19 EET" name="RandomlySelectCities" finished-at="2025-05-05T12:46:21 EET" duration-ms="2330" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RandomlySelectCities -->
+        <test-method signature="CheckTheResultsIsretrived()[pri:10, instance:AlMosaferAutomationTesting.AlMosaferAutomationTesting.AppTest@1d131e1b]" started-at="2025-05-05T12:46:21 EET" name="CheckTheResultsIsretrived" finished-at="2025-05-05T12:46:31 EET" duration-ms="10098" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CheckTheResultsIsretrived -->
+        <test-method is-config="true" signature="DoWork()[pri:0, instance:AlMosaferAutomationTesting.AlMosaferAutomationTesting.AppTest@1d131e1b]" started-at="2025-05-05T12:46:31 EET" name="DoWork" finished-at="2025-05-05T12:46:31 EET" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- DoWork -->
       </class> <!-- AlMosaferAutomationTesting.AlMosaferAutomationTesting.AppTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

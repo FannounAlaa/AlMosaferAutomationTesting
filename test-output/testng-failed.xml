@@ -5,8 +5,9 @@
     <classes>
       <class name="AlMosaferAutomationTesting.AlMosaferAutomationTesting.AppTest">
         <methods>
+          <include name="DoWork"/>
           <include name="Setup"/>
-          <include name="CheckContactNo"/>
+          <include name="CheckFlightDepartureDate"/>
         </methods>
       </class> <!-- AlMosaferAutomationTesting.AlMosaferAutomationTesting.AppTest -->
     </classes>
