@@ -5,9 +5,17 @@
     <classes>
       <class name="AlMosaferAutomationTesting.AlMosaferAutomationTesting.AppTest">
         <methods>
+          <include name="RandomlySelectCities"/>
+          <include name="CheckCurrencyTest"/>
           <include name="DoWork"/>
+          <include name="CheckTheResultsIsretrived"/>
+          <include name="CheckFlightReturnDate"/>
           <include name="Setup"/>
           <include name="CheckFlightDepartureDate"/>
+          <include name="CheckHotelTabIsNotSelected"/>
+          <include name="ChangeLanguageRandomly"/>
+          <include name="CheckContactNo"/>
+          <include name="CheckQitafLogo"/>
         </methods>
       </class> <!-- AlMosaferAutomationTesting.AlMosaferAutomationTesting.AppTest -->
     </classes>

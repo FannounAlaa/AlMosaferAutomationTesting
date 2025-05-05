@@ -19,20 +19,11 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-public class AppTest {
-	WebDriver driver = new ChromeDriver();
-	JavascriptExecutor js = (JavascriptExecutor) driver;
-	String URL = "https://global.almosafer.com/en";
+public class AppTest extends TestData {
 
 	@BeforeTest
 	public void Setup() {
-		driver.manage().window().maximize();
-		driver.get(URL);
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-
-		WebElement PopupButton = driver
-				.findElement(By.cssSelector(".sc-jTzLTM.hQpNle.cta__button.cta__saudi.btn.btn-primary"));
-		PopupButton.click();
+		TestSetup();
 	}
 
 	@Test(priority = 1, enabled = false)
@@ -45,7 +36,6 @@ public class AppTest {
 	@Test(priority = 2)
 	public void CheckCurrencyTest() {
 		String ActualCurrency = driver.findElement(By.cssSelector(".sc-hUfwpO.kAhsZG")).getText();
-		String ExpectedCurrency = "SAR";
 
 		Assert.assertEquals(ActualCurrency, ExpectedCurrency);
 	}
@@ -53,7 +43,6 @@ public class AppTest {
 	@Test(priority = 3)
 	public void CheckContactNo() {
 		String ActualNumber = driver.findElement(By.linkText("+966554400000")).getText();
-		String ExpectedNumber = "+966554400000";
 		Assert.assertEquals(ActualNumber, ExpectedNumber);
 
 	}
@@ -73,7 +62,6 @@ public class AppTest {
 		WebElement HotelTab = driver.findElement(By.id("uncontrolled-tab-example-tab-hotels"));
 		String ActualTab = HotelTab.getDomAttribute("aria-selected");
 
-		String expectedCheckHotelTabIsNotSelected = "false";
 
 		Assert.assertEquals(ActualTab, expectedCheckHotelTabIsNotSelected);
 	}
@@ -84,9 +72,6 @@ public class AppTest {
 		List<WebElement> dates = driver.findElements(By.cssSelector(".sc-dXfzlN.iPVuSG"));
 		String ActualDate = dates.get(0).getText();
 
-		LocalDate date = LocalDate.now();
-		int tomorrow = date.plusDays(1).getDayOfMonth();
-		String tomorrowAsFormatedValue = String.format("%02d", tomorrow);
 
 		Assert.assertEquals(ActualDate, tomorrowAsFormatedValue);
 
@@ -97,19 +82,12 @@ public class AppTest {
 		List<WebElement> dates = driver.findElements(By.cssSelector(".sc-dXfzlN.iPVuSG"));
 		String ActualDate = dates.get(1).getText();
 
-		LocalDate date = LocalDate.now();
-
-		int DayAftertomorrow = date.plusDays(2).getDayOfMonth();
-		String DayAfterTomorrowAsFormatedValue = String.format("%02d", DayAftertomorrow);
 
 		Assert.assertEquals(ActualDate, DayAfterTomorrowAsFormatedValue);
 	}
 
 	@Test(priority = 8)
 	public void ChangeLanguageRandomly() {
-		Random rand = new Random();
-		String[] Websites = {"https://www.almosafer.com/en", "https://www.almosafer.com/ar"};
-		int RandomIndex = rand.nextInt(Websites.length);
 		
 		driver.get(Websites[RandomIndex]);
 		
@@ -122,16 +100,10 @@ public class AppTest {
 	}
 	@Test(priority = 9)
 	public void RandomlySelectCities() {
-		Random rand = new Random();
 		WebElement HotelTab = driver.findElement(By.id("uncontrolled-tab-example-tab-hotels"));
 		HotelTab.click();
 		
 		WebElement SearchInputField = driver.findElement(By.cssSelector(".sc-phbroq-2.uQFRS.AutoComplete__Input"));
-		String[] EnglishCtities = {"Dubai", "Jeddeh", "Riyadh"};
-		String[] ArabicCtities = {"جدة", "دبي"};
-		
-		int randEnglishCitities = rand.nextInt(EnglishCtities.length);
-		int randArabicCtities = rand.nextInt(ArabicCtities.length);
 		
 		if(driver.getCurrentUrl().contains("en")) {
 			SearchInputField.sendKeys(EnglishCtities[randEnglishCitities]);
@@ -142,9 +114,6 @@ public class AppTest {
 		
 		WebElement SelectVistorNumber = driver.findElement(By.cssSelector(".sc-tln3e3-1.gvrkTi"));
 		
-		String[] Values = {"A", "B"};
-		
-		int RandomValue = rand.nextInt(Values.length);
 
 		Select mySelector = new Select(SelectVistorNumber);
 
