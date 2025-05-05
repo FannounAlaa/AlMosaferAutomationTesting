@@ -7,6 +7,7 @@ AlMosaferAutomationTesting
 
 
 ├── AppTest.java         # Main test class containing all TestNG test cases
+
 ├── TestData.java        # Shared data, configurations, and setup logic
 
 ⚙️ Technologies Used
